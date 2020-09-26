@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, Raleway, Roboto, 'Helvetica Neue', 'Segoe UI',
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+  background-image: linear-gradient(0deg, #4b6d77 0, #83607a);
+  color: white;
+}
+
+.container {
+  width: 100%;
+}
+
+main.container {
+  min-height: 100vh;
+}
+
+.box-shadow {
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sr-only {
+  display: none;
+}
+
+.page-content {
+  width: 90%;
+  min-height: 50vh;
+  margin: 1rem 0;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+}
+
+.text-center {
+  text-align: center;
+}
+
+h1.display {
+  font-family: Cookie, cursive;
+}
+
+.app-name {
+  cursor: default;
+  font-size: 7.2rem;
+}
+
+.page-content h2 {
+  font-size: 2rem;
+}
+
+.page-content p {
+  font-size: 200%;
+}
+
+nav {
+  width: 80%;
+}
+
+.button-container {
+  height: 3rem;
+}
+
+.button-container button {
+  /* width: 40%; */
+  padding: 0.4rem 1rem;
+  /* height: 2rem; */
+  border: none;
+  border-radius: 3px;
+  color: white;
+  font-size: 1.1rem;
+  font-family: inherit;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.button-container button img {
+  margin: 0 0.5rem 0 0;
+}
+
+button.google {
+  background-color: rgb(211, 61, 61);
+}
+
+button.discord {
+  background-color: rgb(52, 65, 109);
+}
+
+button.language {
+  background: none;
+  border: none;
+  width: 2rem;
+  height: 2rem;
+  margin: auto;
+  margin-top: 1rem;
+}
+
+button.language img {
+  width: 100%;
+}
+
+.form-control {
+  margin: 1rem 0;
+}
+
+.form-control label {
+  margin-bottom: 0.25rem;
+}
+
+.form-control input {
+  width: 100%;
+  border: none;
+  border-radius: 3px;
+  height: 2rem;
+  padding: 0 0.5rem;
+}
+
+.form-control input[type='submit'] {
+  background-color: #9a5ee9;
+  color: white;
+  font: inherit;
+  font-size: 1.5rem;
+  height: 2.5rem;
+}
+
+.form-control input[type='submit']:active,
+.form-control input[type='submit']:hover,
+button {
+  filter: brightness(1.1);
+  cursor: pointer;
+}
