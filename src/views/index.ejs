@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <title>Hug App! - send and receive virtual hugs</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cookie&family=Raleway:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <main class="container flex-center">
+      <h1 class="display app-name">Hug App</h1>
+      <article class="page-content text-center box-shadow">
+        <h2>Would you like to send someone a hug?</h2>
+        <form id="hugForm">
+          <div class="form-control flex-center">
+            <label for="message">Message (optional)</label>
+            <input class="box-shadow text-center" type="text" name="message" id="message" maxlength="240">
+          </div>
+          <div class="form-control flex-center">
+            <label for="message">Their Name (optional)</label>
+            <input class="box-shadow text-center" type="text" name="name" id="name">
+          </div>
+          <div class="form-control flex-center">
+            <input class="box-shadow" type="submit" value="💖 send!">
+          </div>
+        </form>
+      </article>
+      <!-- <nav>
+        <p class="text-center">Login to keep track of your hugs</p>
+        <div class="button-container flex-center">
+          <button class="discord flex-center">
+            <img src="/img/discord.svg" alt="discord logo" />
+            <p>Discord</p>
+          </button>
+          <button class="google flex-center">
+            <img src="/img/google.svg" alt="google logo" />
+            <p>Google</p>
+          </button>
+        </div>
+        <button class="flex-center language">
+          <img src="/img/language.svg" aria-hidden="true" alt="locale icon" />
+          <p class="sr-only">Language</p>
+        </button>
+      </nav> -->
+      <script src="/js/hug.js"></script>
+    </main>
+  </body>
+</html>

@@ -7,24 +7,35 @@ const path = require('path');
 console.log(`${require('../package.json').name} v${require('../package.json').version}`);
 console.log(`Running on Node ${process.version}`);
 
-const { PORT } = require('./config');
+const { PORT, PRODUCTION } = require('./config');
 
 const app = express();
+
+app.set('views', path.join(__dirname, './views'));
+app.set('view engine', 'ejs');
 
 app.use(morgan('common'));
 app.use(helmet());
 
 const { hugRoutes } = require('./routes');
 
-app.use('/api/hugs', express.json(), hugRoutes);
+app.use(hugRoutes);
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', (req, res) => res.redirect('/'));
+app.get('/', (req, res) => res.render('index'));
 
 const server = app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
+  if (!PRODUCTION) console.log(`http://localhost:${PORT}/`);
 });
 
-process.on('SIGINT', () => server.close());
-process.on('SIGTERM', () => server.close());
+const terminate = () => {
+  console.log('Received signal to exit...');
+  server.close();
+  global.sequelize.close();
+  setTimeout(() => process.exit(0), 3000).unref();
+};
+
+process.on('SIGINT', terminate);
+process.on('SIGTERM', terminate);

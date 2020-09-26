@@ -6,7 +6,6 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
     <title>Hug App! - send and receive virtual hugs</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Cookie&family=Raleway:wght@400;700&display=swap"
@@ -17,23 +16,25 @@
   <body>
     <main class="container flex-center">
       <h1 class="display app-name">Hug App</h1>
-      <article class="page-content text-center box-shadow">
-        <h2>Would you like to send someone a hug?</h2>
-        <form>
+      <article class="page-content hug text-center box-shadow">
+        <h2><%= hug.message ? hug.message : 'Someone sent you a hug!' %></h2>
+        <img src="/img/hug.gif" alt="hugging teddy bears" />
+        <% if (hug.name) { %>
+        <h3>To <%= hug.name %></h3>
+        <% } %> <% if (!hug.claimed) { %>
+        <form id="hugForm">
           <div class="form-control flex-center">
-            <label for="message">Message (optional)</label>
-            <input class="box-shadow text-center" type="text" name="message" id="message">
-          </div>
-          <div class="form-control flex-center">
-            <label for="message">Their Name (optional)</label>
-            <input class="box-shadow text-center" type="text" name="name" id="name">
-          </div>
-          <div class="form-control flex-center">
-            <input class="box-shadow" type="submit" value="💖 send!">
+            <input class="box-shadow" type="submit" value="💖 claim this hug!" />
           </div>
         </form>
+        <% } else { %>
+        <div>
+          <h2>Claimed on</h2>
+          <h3><%= hug.claimedDate.toLocaleString() %></h3>
+        </div>
+        <% } %>
       </article>
-      <nav>
+      <!-- <nav>
         <p class="text-center">Login to keep track of your hugs</p>
         <div class="button-container flex-center">
           <button class="discord flex-center">
@@ -49,7 +50,8 @@
           <img src="/img/language.svg" aria-hidden="true" alt="locale icon" />
           <p class="sr-only">Language</p>
         </button>
-      </nav>
+      </nav> -->
+      <script src="/js/hug-view.js"></script>
     </main>
   </body>
 </html>

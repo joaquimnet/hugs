@@ -4,4 +4,5 @@ module.exports = {
   DB_PASS: process.env.DB_PASS ?? null,
   DB_HOST: process.env.DB_HOST ?? 'localhost',
   DB_DATABASE: process.env.DB_DATABASE ?? 'hugs',
+  PRODUCTION: process.env.NODE_ENV === 'production',
 };

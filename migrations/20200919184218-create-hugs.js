@@ -11,14 +11,8 @@ module.exports = {
         type: Sequelize.DATE,
       },
       claimed: { type: Sequelize.BOOLEAN, allowNull: false, default: false },
-      claimedBy: {
-        type: Sequelize.STRING(36),
-        references: {
-          model: {
-            tableName: 'users',
-          },
-          key: 'id',
-        },
+      claimedDate: {
+        type: Sequelize.DATE,
         allowNull: true,
       },
     });

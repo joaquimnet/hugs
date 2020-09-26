@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/index.js",
-    "dev": "nodemon src/index.js",
+    "dev": "nodemon src/index.js --ignore \"src/public/js/*.js\"",
     "lint": "eslint ./src",
     "create-migration": "npx sequelize-cli migration:generate --name",
     "migrate": "npx sequelize-cli db:migrate",
@@ -16,6 +16,7 @@
   "author": "Joaquim Neto <joaquimmy@yahoo.com>",
   "license": "MIT",
   "dependencies": {
+    "ejs": "^3.1.5",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "helmet": "^4.1.1",

@@ -9,15 +9,18 @@ const Hug = global.sequelize.define(
       allowNull: false,
       defaultValue: DataTypes.UUIDV4,
     },
-    claimed: { type: DataTypes.BOOLEAN, allowNull: false, default: false },
-    claimedBy: {
-      type: DataTypes.STRING(36),
-      references: {
-        model: {
-          tableName: 'users',
-        },
-        key: 'id',
-      },
+    message: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    claimed: { type: DataTypes.BOOLEAN, allowNull: false, default: 0 },
+    claimedDate: {
+      type: DataTypes.DATE,
+      allowNull: true,
     },
   },
   { timestamps: true },

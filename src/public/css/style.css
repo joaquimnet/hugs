@@ -37,6 +37,37 @@ main.container {
   border-radius: 1rem;
 }
 
+.page-content.hug {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+@media only screen and (min-width: 760px) {
+  .page-content {
+    width: 70%;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .page-content {
+    width: 60%;
+  }
+}
+
+@media only screen and (min-width: 1360px) {
+  .page-content {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .page-content {
+    width: 36rem;
+  }
+}
+
 .flex-center {
   display: flex;
   justify-content: center;
@@ -140,4 +171,8 @@ button.language img {
 button {
   filter: brightness(1.1);
   cursor: pointer;
+}
+
+.page-content img {
+  width: 10rem;
 }
