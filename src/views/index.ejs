@@ -15,20 +15,28 @@
   </head>
   <body>
     <main class="container flex-center">
-      <h1 class="display app-name">Hug App</h1>
+      <h1 class="display app-name">
+        <a href="/" style="text-decoration: none; color: inherit">Hug App</a>
+      </h1>
       <article class="page-content text-center box-shadow">
         <h2>Would you like to send someone a hug?</h2>
         <form id="hugForm">
           <div class="form-control flex-center">
             <label for="message">Message (optional)</label>
-            <input class="box-shadow text-center" type="text" name="message" id="message" maxlength="240">
+            <input
+              class="box-shadow text-center"
+              type="text"
+              name="message"
+              id="message"
+              maxlength="240"
+            />
           </div>
           <div class="form-control flex-center">
             <label for="message">Their Name (optional)</label>
-            <input class="box-shadow text-center" type="text" name="name" id="name">
+            <input class="box-shadow text-center" type="text" name="name" id="name" />
           </div>
           <div class="form-control flex-center">
-            <input class="box-shadow" type="submit" value="💖 send!">
+            <input class="box-shadow" type="submit" value="💖 send!" />
           </div>
         </form>
       </article>
